@@ -69,25 +69,25 @@ Queue是一个接口，它定义了六个方法，从操作分为三类。
 
 ######  Insert（tail）
 
-boolean add(E e);
+`boolean add(E e);`
 
-boolean offer(E e);
+`boolean offer(E e);`
 
 区别：当队列空间已满无法入队时，add()会抛出异常;而offer()会返回false。
 
 ###### Remove
 
-E remove(); // the head of this queue
+`E remove(); // the head of this queue`
 
-E poll(); // the head of this queue
+`E poll(); // the head of this queue`
 
 区别：当队列为空时，remove()会抛出异常，而poll()会返回null。
 
 ###### Examine
 
-E element(); // the head of this queue
+`E element(); // the head of this queue`
 
-E peek(); // the head of this queue
+`E peek(); // the head of this queue`
 
 区别：当队列为空时，element()会抛出异常，而peek()会返回null。
 
@@ -98,8 +98,11 @@ PriorityQueue从字面上就很好理解，它是一个优先级队列，它通�
 通过构造器中匿名类的形式实现Comparator接口，通过Comparator自定义排序算法（元素就不需要实现Comparable接口）；另外，假设元素已经实现了Comparable接口，你还是可以通过Comparator自定义排序。一般优先队列的默认为natural ordering，即1 2 3 4 5 6。
 
 下面简要叙述一下比较常用的几个field和method。
+
 PriorityQueue不支持null；
+
 PriorityQueue不是线程安全的，多线程可以使用java.util.concurrent.PriorityBlockingQueue；
+
 使用iterator()遍历时，不保证输出的序列是有序的，其实遍历的是存储数组。
 
 ###### UML类图
@@ -109,20 +112,23 @@ PriorityQueue不是线程安全的，多线程可以使用java.util.concurrent.P
 ###### field
 
 // 数组的默认初始容量
-private static final int DEFAULT_INITIAL_CAPACITY = 11;
+
+`private static final int DEFAULT_INITIAL_CAPACITY = 11;`
 
 // 队列中元素的比较器
-private final Comparator<? super E> comparator;
+
+`private final Comparator<? super E> comparator;`
 
 ###### method
 
-// 构造器 3：指定比较器的构造器
+```java
+// 构造器：指定比较器的构造器
 public PriorityQueue(Comparator<? super E> comparator) {
     this(DEFAULT_INITIAL_CAPACITY, comparator);
 }
+```
 
-
-
+```java
 // 扩容方法
 // minCapacity表示需要的最小容量
 private void grow(int minCapacity) {
@@ -137,6 +143,7 @@ private void grow(int minCapacity) {
         newCapacity = hugeCapacity(minCapacity);
     queue = Arrays.copyOf(queue, newCapacity); // 复制已存储的数据
 }
+```
 
 ### TODO
 
