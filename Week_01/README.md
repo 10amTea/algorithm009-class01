@@ -65,7 +65,7 @@ Queue是一个接口，它定义了六个方法，从操作分为三类。
 
 ###### UML类图
 
- ![img](https://communityfile-drcn.op.hicloud.com/FileServer/getFile/cmtybbs/300/390/471/0890086000300390471.20200524102506.01377091578675169836268984318208:20200524162841:2800:89A561328434DE3692FE74C64B52D372E28D781E3397694AF464397560FE2806.png)
+![QueueUML](https://github.com/10amTea/algorithm009-class01/blob/master/Week_01/picture/PriorityQueueUML.png)
 
 ######  Insert（tail）
 
@@ -104,7 +104,7 @@ PriorityQueue不是线程安全的，多线程可以使用java.util.concurrent.P
 
 ###### UML类图
 
-![img](https://communityfile-drcn.op.hicloud.com/FileServer/getFile/cmtybbs/300/390/471/0890086000300390471.20200524102506.04683268675530819112198920409877:20200524162841:2800:2566DC7213038AA9507B148BFFA63F454F257EE8F3BA44D87647C1B461F97639.png)
+![PriorityQueueUML](https://github.com/10amTea/algorithm009-class01/blob/master/Week_01/picture/PriorityQueueUML.png)
 
 ###### field
 
