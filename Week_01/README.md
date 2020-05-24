@@ -41,7 +41,7 @@ k次方级 O(n^k)
 #### 代码改写
 
 ```java
-	Deque<String> deque = new LinkedList<>();
+    Deque<String> deque = new LinkedList<>();
     deque.addFirst("a"); // 这里存放元素与使用 push 功能上就和栈一致
     deque.addFirst("b");
     deque.addFirst("c");
@@ -118,7 +118,7 @@ private final Comparator<? super E> comparator;
 
 // 构造器 3：指定比较器的构造器
 public PriorityQueue(Comparator<? super E> comparator) {
-	this(DEFAULT_INITIAL_CAPACITY, comparator);
+    this(DEFAULT_INITIAL_CAPACITY, comparator);
 }
 
 
@@ -126,16 +126,16 @@ public PriorityQueue(Comparator<? super E> comparator) {
 // 扩容方法
 // minCapacity表示需要的最小容量
 private void grow(int minCapacity) {
-	int oldCapacity = queue.length; // 获取当前容量
-	// Double size if small; else grow by 50%
-	// 如果旧容量小于64，则增加旧容量+2的大小
-	// 如果旧容量大于等于64，则增加旧容量的一半大小
-	int newCapacity = oldCapacity + ((oldCapacity < 64) ? (oldCapacity + 2) : 
-											(oldCapacity >> 1));
-	// overflow-conscious code
-	if (newCapacity - MAX_ARRAY_SIZE > 0) // 这里处理大容量
-		newCapacity = hugeCapacity(minCapacity);
-	queue = Arrays.copyOf(queue, newCapacity); // 复制已存储的数据
+    int oldCapacity = queue.length; // 获取当前容量
+    // Double size if small; else grow by 50%
+    // 如果旧容量小于64，则增加旧容量+2的大小
+    // 如果旧容量大于等于64，则增加旧容量的一半大小
+    int newCapacity = oldCapacity + ((oldCapacity < 64) ? (oldCapacity + 2) : 
+                                            (oldCapacity >> 1));
+    // overflow-conscious code
+    if (newCapacity - MAX_ARRAY_SIZE > 0) // 这里处理大容量
+        newCapacity = hugeCapacity(minCapacity);
+    queue = Arrays.copyOf(queue, newCapacity); // 复制已存储的数据
 }
 
 ### TODO

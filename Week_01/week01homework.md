@@ -7,16 +7,16 @@
 #### 1、[26. 删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 
 ```java
-	// 注意数组是有序的
-	public int removeDuplicates(int[] nums) {
-    	int cur = 0;
-    	for (int number : nums) {
-        	if (number > nums[cur]) {
-            	nums[++cur] = number;
-        	}
-    	}
-    	return ++cur;
-	}
+    // 注意数组是有序的
+    public int removeDuplicates(int[] nums) {
+        int cur = 0;
+        for (int number : nums) {
+            if (number > nums[cur]) {
+                nums[++cur] = number;
+            }
+        }
+        return ++cur;
+    }
 ```
 
 #### 2、[189. 旋转数组](https://leetcode-cn.com/problems/rotate-array/)
@@ -39,7 +39,7 @@
 #### 3、[21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
 ```java
-	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         // 声明一个虚节点
         ListNode dummyNode = new ListNode(-1);
         ListNode tail = dummyNode;
@@ -61,12 +61,12 @@
 #### 4、[88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
 
 ```java
-	// 1、暴力，加到nums1末尾，Arrays.sort()	
+    // 1、暴力，加到nums1末尾，Arrays.sort()	
 
-	// 2、跟合并两个有序链表类似，这里也用两个指针分别指向数组1的开头，和数组2的开头。
-	// 跟链表合并不同，如果往数组中插入一个元素，为了保证整体的顺序性，
-	// 需要挪动前后的元素，所以需要再新建一个数组。
-	public void merge(int[] nums1, int m, int[] nums2, int n) {
+    // 2、跟合并两个有序链表类似，这里也用两个指针分别指向数组1的开头，和数组2的开头。
+    // 跟链表合并不同，如果往数组中插入一个元素，为了保证整体的顺序性，
+    // 需要挪动前后的元素，所以需要再新建一个数组。
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i = 0, j = 0, k = 0;
         int[] array = new int[m + n];
         while (i < m || j < n) {
@@ -100,8 +100,8 @@ https://leetcode-cn.com/problems/plus-one/
 #### 1、[641. 设计循环双端队列](https://leetcode-cn.com/problems/design-circular-deque/)
 
 ```java
-	// 1、投机做法
-	private Deque<Integer> deque;
+    // 1、投机做法
+    private Deque<Integer> deque;
 
     private Integer capacity;
 
@@ -112,10 +112,10 @@ https://leetcode-cn.com/problems/plus-one/
         capacity = k;
         deque = new ArrayDeque<>(k);
     }
-	 
-	// ...
 
-	// 2、数组做法
+    // ...
+
+    // 2、数组做法
 private int[] elements;
 private int size;
 
@@ -185,9 +185,9 @@ public boolean isFull() {
 #### 2、[42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
 
 ```java
-	// 1、双指针
+    // 1、双指针
 
-	// 2、单调栈
+    // 2、单调栈
     public int trap(int[] height) {
         if (height == null) {
             return 0;
